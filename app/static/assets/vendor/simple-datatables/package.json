@@ -1,0 +1,54 @@
+{
+  "name": "simple-datatables",
+  "version": "3.2.0",
+  "description": "A lightweight, dependency-free JavaScript HTML table plugin.",
+  "main": "dist/index.js",
+  "jsdelivr": "dist/umd/simple-datatables.js",
+  "unpkg": "dist/umd/simple-datatables.js",
+  "module": "src/index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint src/",
+    "build": "npm run build_js && npm run build_js_umd && npm run build_css && npm run build_docs",
+    "build_js": "rollup -c",
+    "build_js_umd": "browserify dist/index.js --standalone simpleDatatables -o dist/umd/simple-datatables.js",
+    "build_css": "cp src/style.css dist/style.css",
+    "build_docs": "npm run build_docs_js && cp src/style.css docs/dist/style.css",
+    "build_docs_js": "rollup -c rollup.docs.config.js",
+    "postbuild_docs": "cp -r dist/umd/simple-datatables.js docs/dist/umd.js",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiduswriter/Simple-DataTables.git"
+  },
+  "keywords": [
+    "DataTable",
+    "DataTables",
+    "table",
+    "html table",
+    "filter",
+    "sort"
+  ],
+  "author": "Johannes Wilm",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/fiduswriter/Simple-DataTables/issues"
+  },
+  "homepage": "https://github.com/fiduswriter/Simple-DataTables#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "browserify": "^17.0.0",
+    "eslint": "^8.2.0",
+    "rollup": "^2.56.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-polyfill-node": "^0.7.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "updates": "^12.1.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.7"
+  }
+}
