@@ -1,15 +1,15 @@
 {
-    "name": "jinja-volt-dashboard",
-    "mastertemplate": "boilerplate-code-jinja",
-    "version": "1.0.3",
+    "name": "flask-volt-datatables",
+    "mastertemplate": "flask-volt-datatables",
+    "version": "0.0.1",
     "description": "Template project - Flask/Jinja2 Theme",
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/app-generator/jinja-volt-dashboard"
+        "url": "https://github.com/app-generator/flask-volt-datatables"
     },
     "bugs": {
-        "url": "https://github.com/app-generator/jinja-volt-dashboard/issues",
+        "url": "https://github.com/app-generator/flask-volt-datatables/issues",
         "email": "support@appseed.us"
     },
     "author": "AppSeed App Generator <support@appseed.us> (https://appseed.us)",
