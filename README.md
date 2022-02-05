@@ -44,7 +44,7 @@ Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
-![Jinja Volt Dashboard - Starter provided by AppSeed.](https://raw.githubusercontent.com/app-generator/jinja-volt-dashboard/master/media/jinja-volt-dashboard-intro.gif)
+![Flask DataTables Sample - Open-Source Sample Project provided by AppSeed.](https://user-images.githubusercontent.com/51070104/152655036-6e430909-c398-43eb-b854-1252ef9fa9ab.gif)
 
 <br />
 
