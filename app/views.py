@@ -3,12 +3,20 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+# Python modules
+import os, logging 
+
 # Flask modules
-from flask   import render_template, request
+from flask   import render_template, request, send_from_directory
 from jinja2  import TemplateNotFound
 
 # App modules
 from app import app
+
+# Return sitemap
+@app.route('/api')
+def sitemap(): 
+    return send_from_directory(os.path.join(app.root_path, 'static', 'datatables'), 'demo.json')
 
 # App main route + generic routing
 @app.route('/', defaults={'path': 'index.html'})
