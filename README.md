@@ -4,10 +4,6 @@ Open-source sample provided by [AppSeed](https://appseed.us). The project implem
 
 <br />
 
-> Status: **WIP**
-
-<br />
-
 > Features:
 
 - DataTables managed by `Simple-DataTables`  (Vanilla) JS
