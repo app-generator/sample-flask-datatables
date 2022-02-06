@@ -1,4 +1,4 @@
-# Flask DataTables Sample
+# [Flask DataTables Sample](https://blog.appseed.us/flask-data-tables-open-source-sample/)
 
 Open-source sample provided by [AppSeed](https://appseed.us). The project implements [paginated access to data using Flask](https://blog.appseed.us/flask-data-tables-open-source-sample/) and **Simple-DataTables**, a lightweight, extendable, dependency-free javascript HTML table plugin (no jQuery dependency).
 
@@ -298,4 +298,4 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 <br />
 
 ---
-Flask DataTables Sample - Provided by **AppSeed** [App Generator](https://appseed.us/app-generator).
+[Flask DataTables Sample](https://blog.appseed.us/flask-data-tables-open-source-sample/) - Provided by **AppSeed** [App Generator](https://appseed.us/app-generator).
