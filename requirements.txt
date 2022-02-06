@@ -2,3 +2,8 @@ flask==1.1.2
 gunicorn==20.0.4
 jinja2==2.11.3
 python-dotenv==0.19.2
+flask-restx==0.5.1
+flask_migrate==3.1.0
+flask_sqlalchemy==2.5.1
+sqlalchemy==1.4.23
+python-decouple==3.5

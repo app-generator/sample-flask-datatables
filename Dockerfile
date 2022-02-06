@@ -10,5 +10,8 @@ ENV PYTHONUNBUFFERED 1
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
+# load sample data
+RUN flask load_random_data
+
 # gunicorn
 CMD ["gunicorn", "--config", "gunicorn-cfg.py", "run:app"]

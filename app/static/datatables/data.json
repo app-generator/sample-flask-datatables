@@ -1,0 +1,36 @@
+[{
+        "ID": 1,
+        "Product Code": "Nike_Air",
+        "Description": "Nike Air More Uptempo",
+        "Price": 99,
+        "Currency": "usd"
+    },
+    {
+        "ID": 2,
+        "Product Code": "Nike_Club",
+        "Description": "Nike Club Joggers BB",
+        "Price": 19,
+        "Currency": "usd"
+    },
+    {
+        "ID": 3,
+        "Product Code": "Nike_Uptempo",
+        "Description": "Nike Uptempo (Gs) 415082",
+        "Price": 599,
+        "Currency": "usd"
+    },
+    {
+        "ID": 4,
+        "Product Code": "EMOZU_Men_5",
+        "Description": "EMOZU Men 5 Inch Running Shorts",
+        "Price": 32,
+        "Currency": "usd"
+    },
+    {
+        "ID": 5,
+        "Product Code": "Mens_Fashion_123a",
+        "Description": "Mens Fashion Athletic Joggers Pants",
+        "Price": 55,
+        "Currency": "usd"
+    }
+]
