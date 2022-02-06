@@ -1,6 +1,6 @@
 # Flask DataTables Sample
 
-Open-source sample provided by [AppSeed](https://appseed.us). The project implements paginated access to data using [Simple-DataTables](https://github.com/fiduswriter/Simple-DataTables), a lightweight, extendable, dependency-free javascript HTML table plugin (no jQuery dependency).
+Open-source sample provided by [AppSeed](https://appseed.us). The project implements [paginated access to data using Flask](https://blog.appseed.us/flask-data-tables-open-source-sample/) and **Simple-DataTables**, a lightweight, extendable, dependency-free javascript HTML table plugin (no jQuery dependency).
 
 <br />
 
