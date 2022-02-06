@@ -4,14 +4,19 @@ Open-source sample provided by [AppSeed](https://appseed.us). The project implem
 
 <br />
 
-> STATUS:  Work in progress
+> Status: **WIP**
 
 <br />
 
 > Features:
 
-- DataTables management via `Simple-DataTables`
-- Backend: Flask
+- DataTables managed by `Simple-DataTables`  (Vanilla) JS
+- Stack: Flask, SqlAlchemy, Flask-Migrate, Flask-RestX
+- Data Tables Implementations
+  - Loaded from `Data` table by a controller (route)
+  - Served by `/api/data` API node and consumed from JS
+  - Loaded without any processing from a file:
+    - `app/static/datatables/data.json`  
 - UI Kit: **Volt Dashboard** (Free Version) by **Themesberg**
 - Deployment scripts: Docker, Gunicorn/Nginx, HEROKU
 - Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
@@ -21,7 +26,7 @@ Open-source sample provided by [AppSeed](https://appseed.us). The project implem
 > Links:
 
 - 👉 [Flask DataTables Sample](#) - LIVE Demo (coming soon)
-- 👉 More products built with [Soft UI Design](https://appseed.us/ui-kit/soft-ui-design-system) - provided by AppSeed
+- 👉 More [Free Samples](https://appseed.us/admin-dashboards/open-source) - provided by AppSeed
 
 <br />
 
@@ -48,44 +53,82 @@ Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
-## Build from sources
+## ✨ How to use it
+
+> Clone Sources (this repo)
 
 ```bash
-$ # Clone the sources
 $ git clone https://github.com/app-generator/flask-volt-datatables.git
 $ cd flask-volt-datatables
-$
-$ # Virtualenv modules installation (Unix based systems)
-$ virtualenv env
-$ source env/bin/activate
-$
-$ # Virtualenv modules installation (Windows based systems)
-$ # virtualenv env
-$ # .\env\Scripts\activate
-$
-$ # Install requirements
-$ pip3 install -r requirements.txt
-$
-$ # Set the FLASK_APP environment variable
-$ (Unix/Mac) export FLASK_APP=run.py
-$ (Windows) set FLASK_APP=run.py
-$ (Powershell) $env:FLASK_APP = ".\run.py"
-$
-$ # Set up the DEBUG environment
-$ # (Unix/Mac) export FLASK_ENV=development
-$ # (Windows) set FLASK_ENV=development
-$ # (Powershell) $env:FLASK_ENV = "development"
-$
-$ # Run the Jinja Template
-$ # --host=0.0.0.0 - expose the app on all network interfaces (default 127.0.0.1)
-$ # --port=5000    - specify the app port (default 5000)  
-$ flask run --host=0.0.0.0 --port=5000
-$
-$ # Access the UI in browser: http://127.0.0.1:5000/
 ```
 
 <br />
 
+> Install Modules using a Virtual Environment
+
+```bash
+$ virtualenv env
+$ source env/bin/activate
+$ pip3 install -r requirements.txt
+```
+
+Or for **Windows-based Systems**
+
+```bash
+$ virtualenv env
+$ .\env\Scripts\activate
+$
+$ # Install modules - SQLite Database
+$ pip3 install -r requirements.txt
+```
+
+<br />
+
+> Set up the environment
+
+```bash
+$ export FLASK_APP=run.py
+$ export FLASK_ENV=development
+```
+
+Or for **Windows-based Systems**
+
+```bash
+$ # CMD terminal
+$ set FLASK_APP=run.py
+$ set FLASK_ENV=development
+$
+$ # Powershell
+$ $env:FLASK_APP = ".\run.py"
+$ $env:FLASK_ENV = "development"
+```
+
+<br />
+
+> Load Sample Data `media/data.csv`
+
+```bash
+$ flask load_data  # randomize the timestamp
+// OR
+$ flask load_data  # randomize the timestamp and values
+```
+
+<br />
+
+> Start the APP
+
+```bash
+$ flask run 
+```
+
+The paginated information is available in three ways: 
+
+- Loaded from `Data` table by a controller (route)
+- Served by `/api/data` API node and consumed from JS
+- Loaded without any processing from a file:
+  - `app/static/datatables/data.json`  
+
+<br />
 ## Code-base structure
 
 The project has a simple structure, represented as bellow:
