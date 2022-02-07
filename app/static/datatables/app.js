@@ -8,8 +8,30 @@ Copyright (c) 2019 - present AppSeed.us
 const doc = document;
 doc.addEventListener("DOMContentLoaded", function(event) {
 
+    // Used for API Requests 
     var xhr1 = new XMLHttpRequest();
  
+    // Toasts
+    const notyf = new Notyf({
+        position: {
+            x: 'right',
+            y: 'top',
+        },
+        types: [
+            {
+                type: 'info',
+                background: '#FA5252',
+                icon: {
+                    className: 'fas fa-comment-dots',
+                    tagName: 'span',
+                    color: '#fff'
+                },
+                dismissible: false
+            }
+        ]
+    });
+
+    // Used by cell edit
     document.addEventListener('keydown', event => {
 
         // Catch 'ENTER' event
@@ -20,19 +42,13 @@ doc.addEventListener("DOMContentLoaded", function(event) {
           
                 // Drop the default event
                 event.preventDefault();
-            
-                // Log the clicked element in the console
-                // console.log(event.target);
-                console.log( 'EVENT -> Cell Save' );
-                
+                            
                 let td = event.target;
                 let tr = event.target.closest('tr.editable');
 
                 let data_id    = tr.dataset.id;            
                 let data_name  = td.dataset.name;
                 let data_value = td.textContent;
-                
-                console.log( ' >> Save Data [' + data_id  + '] ' + data_name + ' = [' + data_value + ']' );
                 
                 xhr1.open("PUT", "/api/data/field/" + data_id); 
                 xhr1.setRequestHeader("Content-Type", "application/json");
@@ -41,11 +57,20 @@ doc.addEventListener("DOMContentLoaded", function(event) {
                 xhr1.onreadystatechange = function() {
                     
                     if (this.status == 200 && this.readyState == 4) { 
-                        console.log( ' >>> Editing OK' ); 
+
+                        notyf.open({
+                            type: 'success',
+                            message: 'Information saved successfully'
+                        });                        
                     }    
                     
-                    if (this.status != 200) { 
-                        console.log( ' >>> Editing ERR ' + this.status ); 
+                    // XMLHttpRequest returns 0 on success
+                    if ( (this.status > 0) && (this.status != 200) ) { 
+                        
+                        notyf.open({
+                            type: 'error',
+                            message: 'Error!'
+                        });
                     }
 
                 };//end onreadystate
@@ -70,18 +95,12 @@ doc.addEventListener("DOMContentLoaded", function(event) {
             // Drop the default event
             event.preventDefault();
         
-            // Log the clicked element in the console
-            // console.log(event.target);
-            console.log( 'EVENT -> Cell Edit' );
-            
             let td = event.target;
             let tr = event.target.closest('tr.editable');
 
             let data_id   = tr.dataset.id;            
             let data_name = td.dataset.name;
-            
-            console.log( ' >> Edit Data ' + data_id  + ' -> ' + data_name );
-            
+                        
             // Enable 'EDITABLE' property
             td.setAttribute("contenteditable", "true");
         }
@@ -92,13 +111,8 @@ doc.addEventListener("DOMContentLoaded", function(event) {
             // Drop the default event
             event.preventDefault();
         
-            // console.log(event.target);
-            console.log( 'EVENT -> ROW Delete' );
-
             let tr = event.target.closest('tr.editable');
             let data_id = tr.dataset.id;
-
-            console.log( ' >>> DELETE ID = ' + data_id ); 
 
             xhr1.open('DELETE', "/api/data/" + data_id, true);
             
@@ -106,12 +120,22 @@ doc.addEventListener("DOMContentLoaded", function(event) {
             xhr1.onreadystatechange = function() {
                 
                 if (this.status == 200 && this.readyState == 4) { 
-                    console.log( ' >>> Deletion OK' ); 
+
                     tr.remove();
+
+                    notyf.open({
+                        type: 'success',
+                        message: 'Information deleted successfully'
+                    });     
                 }    
-                
-                if (this.status != 200) { 
-                    console.log( ' >>> Deletion ERR ' + this.status ); 
+
+                // XMLHttpRequest returns 0 on success
+                if ( (this.status > 0) && (this.status != 200) ) { 
+
+                    notyf.open({
+                        type: 'error',
+                        message: 'Error! ' + this.status
+                    }); 
                 }
 
             };//end onreadystate
