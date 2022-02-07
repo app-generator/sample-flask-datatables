@@ -12,3 +12,25 @@ tr.editing {
     border: 1px solid green !important;
     font-weight: bold;
 }
+
+
+/* Compatibility */
+
+.dataTable-selector {
+    padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.dataTable-top {
+    float: right !important;
+}
+
+.dataTable-search {
+    float: right !important;
+}
+
+.dataTable-top>nav:last-child,
+.dataTable-top>div:last-child,
+.dataTable-bottom>nav:last-child,
+.dataTable-bottom>div:last-child {
+    float: right !important;
+}
