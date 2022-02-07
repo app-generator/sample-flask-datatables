@@ -1,7 +1,7 @@
 {
     "name": "flask-volt-datatables",
     "mastertemplate": "flask-volt-datatables",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Template project - Flask/Jinja2 Theme",
     "scripts": {},
     "repository": {
