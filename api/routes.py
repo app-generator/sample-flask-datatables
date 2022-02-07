@@ -47,6 +47,11 @@ update_model = rest_api.model('UpdateModel', {"code": fields.String(required=Fal
                                               "type": fields.String(required=False, default='transaction'),
                                             })
 
+# Used to validate input data for single field supdate
+update_field_model = rest_api.model('UpdateFieldModel', {"data_name" : fields.String(required=True, min_length=1, max_length=128),
+                                                         "data_value": fields.String(required=True, min_length=1, max_length=128)
+                                            })
+
 """
     Return Files - Served by @APP object
 """
@@ -222,3 +227,46 @@ class ItemManager(Resource):
         )
 
         return response
+
+@rest_api.route('/api/data/field/<int:id>')
+class FieldManager(Resource):
+
+    """
+       Return Item
+    """
+    @rest_api.expect(update_field_model, validate=True)
+    def put(self, id):
+
+        response_data = []
+        status = 400
+
+        # Read ALL input  
+        req_data = request.get_json()
+
+        item = Data.get_by_id(id)
+
+        if item:
+            
+            status = 200
+            
+            data_name  = req_data.get("data_name"  )
+            data_value = req_data.get("data_value" )
+            
+            if data_name == 'code':
+                item.code = data_value        
+
+            if data_name == 'name':
+                item.name = data_value        
+
+            # Save the data
+            item.save()
+
+            response_data = item.toDICT()
+
+        response = app.response_class(
+            response=json.dumps( response_data ), 
+            status=status,
+            mimetype='application/json'
+        )
+
+        return response     

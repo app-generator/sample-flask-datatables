@@ -58,7 +58,7 @@ def datatables():
     '''
 
     table  = ''
-    table += '<table class="table">'
+    table += '<table class="table hoverTable">'
     table += '    <thead>'
     table += '        <tr>'
     table += '            <th>ID</th>'
@@ -67,6 +67,7 @@ def datatables():
     table += '            <th>Price</th>'
     table += '            <th>Currency</th>'
     table += '            <th>Timestamp</th>'
+    table += '            <th>&nbsp;</th>'
     table += '        </tr>'
     table += '    </thead>'
     table += '    <tbody>'
@@ -78,11 +79,25 @@ def datatables():
 
         # Format the date
         ts = datetime.utcfromtimestamp(item.ts).strftime('%Y-%m-%d')
-        table += '        <tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td><td>{5}</td></tr>'.format( item.id, item.code, item.name, item.value, item.currency, ts )
+       #table += '        <tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td><td>{5}</td></tr>'.format( item.id, item.code, item.name, item.value, item.currency, ts )
+        
+        # Open ROW
+        table += '<tr data-id="' + str( item.id   ) + '" class="editable">'
+        
+        table += '<td data-name="id">' + str( item.id   )  + '</td>' # ID
+        table += '<td class="editable" data-name="code">' + item.code         + '</td>' # ID
+        table += '<td class="editable" data-name="name">' + item.name         + '</td>' # ID
+        table += '<td class="editable" data-name="value">' + str( item.value ) + '</td>' # ID
+        table += '<td class="editable" data-name="currency">' + item.currency     + '</td>' # ID
+        table += '<td data-name="ts">' + ts                + '</td>' # ID
+
+        table += '<td><a href="#" class="row-delete text-danger me-3">delete</a></td>' # ID
+
+        # Close ROW
+        table += '</tr>'
 
     table += '    </tbody>'
-    table += '</table>'
-
+    table += '</table>' 
     
     return render_template( 'datatables/datatables.html', segment='datatables', table=table )
 

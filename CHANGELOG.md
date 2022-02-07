@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.4] 2022-02-07
+### Improvements
+
+- Added `inline edit` for rows
+
 ## [0.0.3] 2022-02-07
 ### Improvements
 

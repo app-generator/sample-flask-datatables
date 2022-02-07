@@ -8,11 +8,12 @@ Open-source sample provided by [AppSeed](https://appseed.us). The project implem
 
 - DataTables managed by `Simple-DataTables`  (Vanilla) JS
 - Stack: Flask, SqlAlchemy, Flask-Migrate, Flask-RestX
-- Data Tables Implementations
+- Data Tables Implementation(s):
   - Loaded from `Data` table by a controller (route)
   - Served by `/api/data` API node and consumed from JS
   - Loaded without any processing from a file:
-    - `app/static/datatables/data.json`  
+    - `app/static/datatables/data.json`
+  - Inline Edit / Delete
 - UI Kit: **Volt Dashboard** (Free Version) by **Themesberg**
 - Deployment scripts: Docker, Gunicorn/Nginx, HEROKU
 - Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
