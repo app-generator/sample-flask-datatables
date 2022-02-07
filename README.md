@@ -106,7 +106,7 @@ $ $env:FLASK_ENV = "development"
 ```bash
 $ flask load_data  # randomize the timestamp
 // OR
-$ flask load_data  # randomize the timestamp and values
+$ flask load_random_data  # randomize the timestamp and values
 ```
 
 <br />
