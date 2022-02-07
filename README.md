@@ -46,7 +46,7 @@ Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
-![Flask DataTables Sample - Open-Source Sample Project provided by AppSeed.](https://user-images.githubusercontent.com/51070104/152655036-6e430909-c398-43eb-b854-1252ef9fa9ab.gif)
+![Flask DataTables Sample - Open-Source Sample Project provided by AppSeed.](https://user-images.githubusercontent.com/51070104/152824173-a55c9ddd-e282-4dac-bd59-07b27c41269a.gif)
 
 <br />
 
